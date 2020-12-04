@@ -5,25 +5,53 @@
  */
 
 html {
+  scroll-behavior: smooth;
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
+}
+html,
+body {
+	height: 100%;
+}
+body {
+  -ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+* {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
+*,
+*:before,
+*:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,
+:active {
+	outline: none;
+}
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
 }
 
 /* Sections
    ========================================================================== */
 
-/**
- * Remove the margin in all browsers.
- */
-
-body {
-  margin: 0;
-}
 
 /**
  * Render the `main` element consistently in IE.
  */
-
+aside,
+nav,
+footer,
+header,
+section,
 main {
   display: block;
 }
@@ -33,9 +61,14 @@ main {
  * `article` contexts in Chrome, Firefox, and Safari.
  */
 
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: inherit;
+	font-size: inherit;
 }
 
 /* Grouping content
@@ -46,11 +79,6 @@ h1 {
  * 2. Show the overflow in Edge and IE.
  */
 
-hr {
-  box-sizing: content-box; /* 1 */
-  height: 0; /* 1 */
-  overflow: visible; /* 2 */
-}
 
 /**
  * 1. Correct the inheritance and scaling of font size in all browsers.
@@ -71,8 +99,18 @@ pre {
 
 a {
   background-color: transparent;
+  text-decoration: none;
 }
-
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+a:focus,
+a:active {
+	outline: none;
+}
 /**
  * 1. Remove the bottom border in Chrome 57-
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
@@ -143,6 +181,7 @@ sup {
 
 img {
   border-style: none;
+  vertical-align: top;
 }
 
 /* Forms
@@ -217,7 +256,16 @@ button:-moz-focusring,
 [type="submit"]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
-
+input::-ms-clear {
+	display: none;
+}
+button {
+	cursor: pointer;
+}
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
 /**
  * Correct the padding in Firefox.
  */
@@ -342,4 +390,7 @@ template {
 
 [hidden] {
   display: none;
+}
+ul li {
+	list-style: none;
 }

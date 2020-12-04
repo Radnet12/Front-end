@@ -45,11 +45,9 @@ a {
     height: 100%;
     transition: all 0.15s;
 }
-
 .map a {
     transition: all 0.15s;
 }
-
 .active {
     background-color: #bfbfbf;
     transition: all 0.15s;
@@ -63,4 +61,7 @@ a {
 
 .info h2 {
     margin-bottom: 20px;
+}
+.hide {
+    display: none;
 }

@@ -55,6 +55,37 @@ $leftLinks.forEach(el => {
         }
         self.classList.remove('active');
     });
+    el.addEventListener('click', (e) => {
+        let self = e.currentTarget;
+        let selfColor = self.dataset.color;
+        let selfAttr = self.getAttribute('href');
+        let currentElement = document.querySelector(`.map a[href="${selfAttr}"]`);
+        let currentPath = currentElement.querySelectorAll('path');
+        let currentPolygon = currentElement.querySelectorAll('polygon');
+
+        $mapLinks.forEach(mapLink => {
+            mapLink.classList.add('hide');
+        });
+        currentElement.classList.remove('hide');
+
+        currentPath.forEach(path => {
+            path.addEventListener('mouseenter', () => {
+                path.style.cssText = `fill: ${selfColor}; stroke-width: 2px;`;
+            });
+            path.addEventListener('mouseleave', () => {
+                path.style.cssText = ``;
+            });
+        });
+        currentPolygon.forEach(polygon => {
+            polygon.addEventListener('mouseenter', () => {
+                polygon.style.cssText = `fill: ${selfColor}; stroke-width: 2px;`;
+            });
+            polygon.addEventListener('mouseleave', () => {
+                polygon.style.cssText = ``;
+            });
+        });
+
+    });
 });
 $mapLinks.forEach(el => {
     el.addEventListener('mouseenter', (e) => {
