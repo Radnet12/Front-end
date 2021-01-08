@@ -596,7 +596,7 @@
 		"function-url-scheme-whitelist": null,
 		"function-whitelist": null,
 		"function-whitespace-after": "always",
-		"indentation": 2,
+		"indentation": 4,
 		"keyframe-declaration-no-important": true,
 		"length-zero-no-unit": true,
 		"max-empty-lines": 1,
