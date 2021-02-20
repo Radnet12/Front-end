@@ -99,11 +99,11 @@ const js = () => {
         .pipe(browsersync.stream());
 };
 const fonts = () => {
-    src('./src/fonts/**.ttf')
-        .pipe(
-            ttf2woff()
-        )
-        .pipe(dest('./dist/fonts/'))
+    // src('./src/fonts/**.ttf')
+    //     .pipe(
+    //         ttf2woff()
+    //     )
+    //     .pipe(dest('./dist/fonts/'))
     return src('./src/fonts/**.ttf')
         .pipe(
             ttf2woff2()
