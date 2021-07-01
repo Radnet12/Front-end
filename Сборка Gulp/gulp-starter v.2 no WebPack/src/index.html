@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <title>Имя</title>
 
     <!-- SEO и отображение ссылки в соц. сетях -->
@@ -31,11 +32,9 @@
 </head>
 <body>
     <div class="wrapper">
-        @include("./html/ui/header.html")
-            <main>
-                @include("./html/main.html")
-            </main>
-        @include("./html/ui/footer.html")
+        @include("./html/header.html")
+
+        @include("./html/footer.html")
     </div>
     <script src="js/script.js"></script>
 </body>

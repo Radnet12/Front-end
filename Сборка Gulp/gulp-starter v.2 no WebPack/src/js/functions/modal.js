@@ -19,7 +19,7 @@ const modals = () => {
         }
     }
 
-    function bindModal(triggerSelector, modalSelector, closeSelector, closeOverOverlay = true, overlaySelector = null) {
+    function bindModal(triggerSelector, modalSelector, closeSelector, closeOverOverlay = true) {
         const triggers = document.querySelectorAll(triggerSelector),
             modal = document.querySelector(modalSelector),
             close = document.querySelector(closeSelector);
@@ -37,13 +37,11 @@ const modals = () => {
             actionsWithModal(modal, 'no');
         });
 
-        if (overlaySelector && closeOverOverlay) {
-            modal.addEventListener('click', (e) => {
-                if (e.target.classList.contains(overlaySelector)) {
-                    actionsWithModal(modal, 'no');
-                }
-            });
-        }
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal && closeOverOverlay) {
+                actionsWithModal(modal, 'no');
+            }
+        });
     }
 
     function showModalByTime(selector, time) {
@@ -54,4 +52,3 @@ const modals = () => {
         }, time);
     }
 };
-export default modals;
